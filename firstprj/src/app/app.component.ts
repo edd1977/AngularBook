@@ -15,6 +15,7 @@ export class AppComponent {
   }
 
   getTodoItems() {
+    // console.log("getTodoItems was fired!"); // вызывается несолкько раз, когда пользователь меняет флажки. И при старте приложения.
     return this.model.items;
   }
 
