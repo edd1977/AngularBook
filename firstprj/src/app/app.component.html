@@ -1,5 +1,10 @@
 <h3 class="bg-primary p-a-1">{{getName()}}'s To Do List</h3>
 
+<div class="m-t-1 m-b-1">
+  <input class="form-control" #todoText />
+  <button class="btn btn-primary m-t-1" (click)="addItem(todoText.value)">Add</button>
+</div>
+
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -9,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of getTodoItems(); let i = index;">
+    <tr *ngFor="let item of getNotDoneItems(); let i = index;">
       <td>{{ i + 1}}</td>
       <td>{{ item.action }}</td>
       <td>
