@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ToDo - grid layout</title>
+        <meta charset="utf-8" />
+        <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+        <style>
+            #gridContainer {
+                padding: 20px;
+            }
+            .row > div {
+                border: 1px solid lightgray;
+                padding: 10px;
+                background-color: aliceblue;
+                margin: 5px 0;
+            }
+            .row:nth-of-type(odd) > div {
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body class="m-a-1">
+
+        <h3 class="panel-header">Grid Layout</h3>
+
+        <div id="gridContainer">
+            
+            <div class="row">
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-1">1</div>
+                <div class="col-xs-2">2</div>
+                <div class="col-xs-2">2</div>
+                <div class="col-xs-6">6</div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-3">3</div>
+                <div class="col-xs-4">4</div>
+                <div class="col-xs-5">5</div>
+                <div class="col-xs-3">3</div> <!-- Ошибочный, выпавший из 12-разрядов элемент. -->
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">6</div>
+                <div class="col-xs-6">6</div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-11">11</div>
+                <div class="col-xs-1">1</div>
+            </div>
+
+            <div class="row">
+                    <div class="col-xs-12">12</div>
+            </div>
+
+        </div>
+
+        <a href="adaptive-layout.html">Адаптивная разметка</a>
+
+    </body>
+</html>
