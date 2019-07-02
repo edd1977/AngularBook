@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Primer</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <!-- Ручная загрузка файла js:
+            <script src="primer.js"></script>
+        -->
+        <!-- Использование загрузчика модулей:-->
+        <script src="node_modules/systemjs/dist/system.src.js"></script> <!-- Сам загрузчик -->
+        <script> // настройка загрузчика:
+            System.config({ packages: { "": {} } });
+            System.import("primer").catch(function(err){ console.error(err); });
+            // приведет к тому же результату. Файл primer.js был загружен как модуль JS
+        </script>
+    </head>
+    <body class="m-a-1">
+        <h3>JavaScript Primer</h3>
+    </body>
+
+</html>

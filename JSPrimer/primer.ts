@@ -1,0 +1,73 @@
+console.log("Hello");
+console.log("Apples");
+
+// определение 2-х функций с одинаковыми именами:
+function sayHello() {
+    console.log("Hello, anybody!!!");
+}
+function sayHello(name = "You") {
+    console.log("Hello, " + name + "!!!");
+} //
+
+sayHello(); // да, действительно, будет выполнена вторая функция, а не первая, хотя мы не передаем ни одного параметра.
+
+// остаточные параметры:
+function restParamasFunction(...restParams) {
+    console.log("restParams: " + "(" + (typeof restParams) + ") " + restParams); // restParams: 1,2,three,true,false,90
+    console.log("arguments: " + "(" + (typeof restParams) + ") " + arguments); // arguments: [object Arguments]
+}
+restParamasFunction(1, 2,"three", true, false, 90);
+
+// Лямбда-выражения:
+// Одно действие:
+let oneAction = (name) => console.log("hello! " + name + "!!!");
+oneAction("Denis");
+// Более одного действия и возможный return:
+let moreThanOneAction = (name: string) => {
+    let n = name.toUpperCase();
+    console.log("hello! " + n + "!!!");
+    return n;
+}
+console.log(moreThanOneAction("Anya"));
+
+// Шаблоны строк:
+let weather = "raining";
+let mess = `It is ${weather} today.`;
+console.log(mess);
+
+// вычисление отатка (чтоб запомнить):
+console.info(23%5); // 3
+
+// Преобразование в строку:
+//5.toString() // Ошибка! Надо:
+(5).toString(); // почему так? Просто 5 - это литерал числа. Чтобы вызвать функцию toString(), литерал надо преобразовать в число: (5).
+// Другой вариант:
+String(11); // "11"
+
+// методы массивов (которые я редко использую):
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+let copyArr = (arr) => {
+    let newArr = [];
+    arr.forEach(element => {
+        newArr.push(element);
+    });
+    return newArr;
+}
+console.info(arr);
+//
+console.log("slice(4, 6) = " + arr.slice(4, 6)); // ind1, ind2
+console.log("splice(4, 3) = " + copyArr(arr).splice(4, 3)); // ind1, count
+let copy1 = copyArr(arr);
+copy1.unshift(0);
+console.log("unshift(0) = " + copy1);
+console.log("every( \"> 0\") = " + arr.every((el) => {
+    return el > 0;
+})); // true
+console.log("some( \"=== 5\") = " + arr.some((el) => {
+    return el === 5;
+})); // true
+console.log("findIndex( === 6) = " + arr.findIndex((el) => { return el === 6; }));
+console.info("map( el + 1) = " + arr.map(el => { return el + 1} )); // возвращается новый массив! Старый остается без изменений.
+console.log("reduce(вычисляем сумму всех элементов) = " + arr.reduce((sum, el) => {
+    return sum + el;
+}, 0));
